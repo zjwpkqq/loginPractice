@@ -6,6 +6,8 @@ import com.example.loginpractice.db.User;
 
 import org.litepal.LitePal;
 
+import java.util.List;
+
 public class Utility {
 
     public static void setManager() {
@@ -17,8 +19,11 @@ public class Utility {
     }
 
     public static boolean CheckLogin(String account, String password) {
-        User user = LitePal.find(User.class, 1);
-        return account.equals(user.getAccount()) && password.equals(user.getPassword());
+        List<User> users = LitePal.where("account = ?", account).find(User.class);
+        for (User user : users) {
+            if(password.equals(user.getPassword()))
+                return true;
+        }
+        return false;
     }
-
 }

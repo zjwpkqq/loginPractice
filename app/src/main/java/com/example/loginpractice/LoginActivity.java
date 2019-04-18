@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         accountEdit = findViewById(R.id.account);
         passwordEdit = findViewById(R.id.password);
         pref = PreferenceManager.getDefaultSharedPreferences(this);
@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                 String password = passwordEdit.getText().toString();
                 if(Utility.CheckLogin(account, getMD5String(password))) {
                     CheckRemember(account, password);
-                    Intent intent = new Intent(LoginActivity.this, LoginSuccess.class);
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
