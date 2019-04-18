@@ -1,0 +1,28 @@
+package com.example.loginpractice.db;
+
+import org.litepal.annotation.Column;
+import org.litepal.crud.LitePalSupport;
+
+public class User extends LitePalSupport {
+
+    @Column(unique = true, defaultValue = "unknown")
+    private String account;
+
+    private String password;
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+}

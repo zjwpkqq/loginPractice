@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LoginPractice</string>
+    <string name="input">0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="password">密码：</string>
+    <string name="account">账号：</string>
+    <string name="loginButton">登录</string>
+    <string name="admin">admin</string>
+    <string name="md5">299132688689127175738334524183350839358</string>
+</resources>
