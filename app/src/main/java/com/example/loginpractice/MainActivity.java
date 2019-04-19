@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
      * ViewPager适配器
      */
     private class MyViewPagerAdapter extends FragmentPagerAdapter {
-        public MyViewPagerAdapter(FragmentManager fm) {
+        MyViewPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 

@@ -8,11 +8,10 @@
         </shape>
     </item>
     <!-- 主体背景颜色值 -->
-    <item
-        android:top="@dimen/tab_div_height"
-        >
+    <item android:top="@dimen/tab_div_height">
         <shape>
             <solid android:color="@color/tab_bg" />
         </shape>
     </item>
+
 </layer-list>

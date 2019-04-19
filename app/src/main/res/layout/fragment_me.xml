@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="测试滑动效果"
+        android:text="动"
         android:textSize="35sp" />
 
 </LinearLayout>
