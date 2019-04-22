@@ -11,10 +11,21 @@ public class Hero {
     private String species;
     // 性别
     private String sex;
+    // 能力
+    private String power;
 
     public Hero(String name, int imageId) {
         this.name = name;
         this.imageId = imageId;
+    }
+
+    public Hero(String name, int imageId, String sex, String species, String introduction, String power) {
+        this.name = name;
+        this.imageId = imageId;
+        this.sex = sex;
+        this.species = species;
+        this.introduction = introduction;
+        this.power = power;
     }
 
     public String getName() {
@@ -55,5 +66,13 @@ public class Hero {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public String getPower() {
+        return power;
+    }
+
+    public void setPower(String power) {
+        this.power = power;
     }
 }

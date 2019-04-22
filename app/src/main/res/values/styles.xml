@@ -23,4 +23,7 @@
     5.tabIndicatorHeight：TabLayout指示器高度
     -->
 
+    <style name="HeroActivityTheme" parent="AppTheme">
+    </style>
+
 </resources>
