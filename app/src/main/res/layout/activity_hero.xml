@@ -57,7 +57,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="性别"
+                    android:text="@string/sex"
                     android:textSize="30sp" />
 
                 <TextView
@@ -69,7 +69,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="种类"
+                    android:text="@string/species"
                     android:textSize="30sp" />
 
                 <TextView
@@ -81,7 +81,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="介绍"
+                    android:text="@string/introduction"
                     android:textSize="30sp" />
 
                 <TextView
@@ -93,7 +93,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="能力"
+                    android:text="@string/power"
                     android:textSize="30sp" />
 
                 <TextView
