@@ -49,7 +49,7 @@ public class ContactsFragment extends Fragment {
 
     private void initHeroes() {
         String[] sex = {"男", "女", "无"};
-        String[] species = {"人类", "阿斯加德人", "半人半神"};
+        String[] species = {"人类", "阿斯加德人", "半人类半斯巴达人", "泽侯贝里人", "兽人", "花神巨像族", "外星人"};
         Hero ironman = new Hero("钢铁侠", R.drawable.iron_man, sex[0], species[0],
                 getResources().getString(R.string.iron_man_intro),
                 getResources().getString(R.string.iron_man_power));
@@ -74,6 +74,10 @@ public class ContactsFragment extends Fragment {
                 getResources().getString(R.string.thor_intro),
                 getResources().getString(R.string.thor_power));
         heroList.add(thor);
+        Hero captainMarvel = new Hero("惊奇队长", R.drawable.captain_marvel, sex[1], species[0],
+                getResources().getString(R.string.captain_marvel_intro),
+                getResources().getString(R.string.captain_marvel_power));
+        heroList.add(captainMarvel);
         Hero warMachine = new Hero("战争机器", R.drawable.war_machine, sex[0], species[0],
                 getResources().getString(R.string.war_machine_intro),
                 getResources().getString(R.string.war_machine_power));
@@ -90,6 +94,10 @@ public class ContactsFragment extends Fragment {
                 getResources().getString(R.string.black_panther_intro),
                 getResources().getString(R.string.black_panther_power));
         heroList.add(blackPanther);
+        Hero shuri = new Hero("舒莉", R.drawable.shuri, sex[1], species[0],
+                getResources().getString(R.string.shuri_intro),
+                getResources().getString(R.string.shuri_power));
+        heroList.add(shuri);
         Hero spiderMan = new Hero("蜘蛛侠", R.drawable.spider_man, sex[0], species[0],
                 getResources().getString(R.string.spider_man_intro),
                 getResources().getString(R.string.spider_man_power));
@@ -114,5 +122,25 @@ public class ContactsFragment extends Fragment {
                 getResources().getString(R.string.star_lord_intro),
                 getResources().getString(R.string.star_lord_power));
         heroList.add(starLord);
+        Hero gamora = new Hero("卡魔拉", R.drawable.gamora, sex[1], species[3],
+                getResources().getString(R.string.gamora_intro),
+                getResources().getString(R.string.gamora_power));
+        heroList.add(gamora);
+        Hero rocket = new Hero("火箭浣熊", R.drawable.rocket, sex[0], species[4],
+                getResources().getString(R.string.rocket_intro),
+                getResources().getString(R.string.rocket_power));
+        heroList.add(rocket);
+        Hero groot = new Hero("格鲁特", R.drawable.groot, sex[0], species[5],
+                getResources().getString(R.string.groot_intro),
+                getResources().getString(R.string.groot_power));
+        heroList.add(groot);
+        Hero drax = new Hero("德拉克斯", R.drawable.drax, sex[0], species[6],
+                getResources().getString(R.string.drax_intro),
+                getResources().getString(R.string.drax_power));
+        heroList.add(drax);
+        Hero mantis = new Hero("螳螂女", R.drawable.mantis, sex[1], species[6],
+                getResources().getString(R.string.mantis_intro),
+                getResources().getString(R.string.mantis_power));
+        heroList.add(mantis);
     }
 }
