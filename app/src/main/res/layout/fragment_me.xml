@@ -71,6 +71,7 @@
                 android:background="@color/tab_div" />
 
             <RelativeLayout
+                android:id="@+id/change_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp" >

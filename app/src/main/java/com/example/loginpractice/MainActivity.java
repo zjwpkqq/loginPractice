@@ -37,12 +37,14 @@ public class MainActivity extends AppCompatActivity {
         initViews();
         Intent intent = getIntent();
         Bundle bundle = new Bundle();
+        String account = intent.getStringExtra("account");
         // 通过Utility利用intent内的账号名获取nickname
-        String nickname = Utility.getNickname(intent.getStringExtra("account"));
+        String nickname = Utility.getNickname(account);
         // 通过Utility利用intent内的账号名获取portraitId
-        int portrait = Utility.getPortrait(intent.getStringExtra("account"));
+        int portrait = Utility.getPortrait(account);
         bundle.putString("nickname", nickname);
         bundle.putInt("portrait", portrait);
+        bundle.putString("account", account);
         TAB_FRAGMENTS[3].setArguments(bundle);
     }
 
