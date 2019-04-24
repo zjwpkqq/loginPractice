@@ -15,6 +15,8 @@ public class Utility {
         User user = new User();
         user.setAccount(MyApplication.getContext().getResources().getString(R.string.admin));
         user.setPassword(MyApplication.getContext().getResources().getString(R.string.md5));
+        user.setNickname("噬元兽");
+        user.setPortraitId(R.drawable.portrait);
         user.save();
     }
 
@@ -25,5 +27,15 @@ public class Utility {
                 return true;
         }
         return false;
+    }
+
+    public static String getNickname(String account) {
+        List<User> users = LitePal.where("account = ?", account).find(User.class);
+        return users.get(0).getNickname();
+    }
+
+    public static int getPortrait(String account) {
+        List<User> users = LitePal.where("account = ?", account).find(User.class);
+        return users.get(0).getPortraitId();
     }
 }

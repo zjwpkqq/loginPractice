@@ -2,7 +2,7 @@
 <litepal>
     <dbname value="UserDatabase" />
 
-    <version value="1" />
+    <version value="2" />
 
     <list>
         <mapping class="com.example.loginpractice.db.User" />

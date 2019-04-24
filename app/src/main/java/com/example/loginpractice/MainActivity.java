@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.loginpractice.util.Utility;
+
 public class MainActivity extends AppCompatActivity {
 
     // Tab文字
@@ -35,8 +37,12 @@ public class MainActivity extends AppCompatActivity {
         initViews();
         Intent intent = getIntent();
         Bundle bundle = new Bundle();
-        // 将intent内的账号名作为特工称号传入me的fragment中
-        bundle.putString("account", intent.getStringExtra("account"));
+        // 通过Utility利用intent内的账号名获取nickname
+        String nickname = Utility.getNickname(intent.getStringExtra("account"));
+        // 通过Utility利用intent内的账号名获取portraitId
+        int portrait = Utility.getPortrait(intent.getStringExtra("account"));
+        bundle.putString("nickname", nickname);
+        bundle.putInt("portrait", portrait);
         TAB_FRAGMENTS[3].setArguments(bundle);
     }
 

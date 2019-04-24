@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MeFragment extends Fragment {
 
     @Nullable
@@ -18,7 +20,10 @@ public class MeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_me, container, false);
         TextView userName = view.findViewById(R.id.username);
         Bundle bundle = getArguments();
-        userName.setText(bundle != null ? bundle.getString("account") : null);
+        userName.setText(bundle != null ? bundle.getString("nickname") : null);
+
+        CircleImageView portraitImage = view.findViewById(R.id.portrait_image);
+        portraitImage.setImageResource(bundle != null ? bundle.getInt("portrait") : 0);
 
         TextView logout = view.findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {

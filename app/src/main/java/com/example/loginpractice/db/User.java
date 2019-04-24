@@ -10,6 +10,10 @@ public class User extends LitePalSupport {
 
     private String password;
 
+    private String nickname;
+
+    private int portraitId;
+
     public String getAccount() {
         return account;
     }
@@ -24,5 +28,21 @@ public class User extends LitePalSupport {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getPortraitId() {
+        return portraitId;
+    }
+
+    public void setPortraitId(int portraitId) {
+        this.portraitId = portraitId;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 }
