@@ -49,7 +49,8 @@ public class ContactsFragment extends Fragment {
 
     private void initHeroes() {
         String[] sex = {"男", "女", "无"};
-        String[] species = {"人类", "阿斯加德人", "半人类半斯巴达人", "泽侯贝里人", "兽人", "花神巨像族", "外星人"};
+        String[] species = {"人类", "阿斯加德人", "半人类半斯巴达星人", "泽侯贝里人", "兽人", "花神巨像族",
+                "外星人", "生化人"};
         Hero ironman = new Hero("钢铁侠", R.drawable.iron_man, sex[0], species[0],
                 getResources().getString(R.string.iron_man_intro),
                 getResources().getString(R.string.iron_man_power));
@@ -70,7 +71,7 @@ public class ContactsFragment extends Fragment {
                 getResources().getString(R.string.hawkeye_intro),
                 getResources().getString(R.string.hawkeye_power));
         heroList.add(hawkeye);
-        Hero thor = new Hero("索尔", R.drawable.thor, sex[0], species[1],
+        Hero thor = new Hero("雷神", R.drawable.thor, sex[0], species[1],
                 getResources().getString(R.string.thor_intro),
                 getResources().getString(R.string.thor_power));
         heroList.add(thor);
@@ -82,6 +83,10 @@ public class ContactsFragment extends Fragment {
                 getResources().getString(R.string.war_machine_intro),
                 getResources().getString(R.string.war_machine_power));
         heroList.add(warMachine);
+        Hero vision = new Hero("幻视", R.drawable.vision, sex[0], species[7],
+                getResources().getString(R.string.vision_intro),
+                getResources().getString(R.string.vision_power));
+        heroList.add(vision);
         Hero scarletWitch = new Hero("绯红女巫", R.drawable.scarlet_witch, sex[1], species[0],
                 getResources().getString(R.string.scarlet_witch_intro),
                 getResources().getString(R.string.scarlet_witch_power));
@@ -106,7 +111,7 @@ public class ContactsFragment extends Fragment {
                 getResources().getString(R.string.falcon_intro),
                 getResources().getString(R.string.falcon_power));
         heroList.add(falcon);
-        Hero winterSolder = new Hero("冬兵", R.drawable.winter_solder,sex[0], species[0],
+        Hero winterSolder = new Hero("巴基", R.drawable.winter_solder,sex[0], species[0],
                 getResources().getString(R.string.winter_solder_intro),
                 getResources().getString(R.string.winter_solder_power));
         heroList.add(winterSolder);

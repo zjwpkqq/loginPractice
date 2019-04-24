@@ -27,7 +27,8 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 android:fitsSystemWindows="true"
-                app:layout_collapseMode="parallax" />
+                app:layout_collapseMode="parallax"
+                android:contentDescription="@string/hero_image" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"

@@ -1,6 +1,7 @@
 package com.example.loginpractice;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -27,12 +28,16 @@ public class MainActivity extends AppCompatActivity {
     // Tab数量
     private final int COUNT = TAB_TITLES.length;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
+        Intent intent = getIntent();
+        Bundle bundle = new Bundle();
+        // 将intent内的账号名作为特工称号传入me的fragment中
+        bundle.putString("account", intent.getStringExtra("account"));
+        TAB_FRAGMENTS[3].setArguments(bundle);
     }
 
     private void initViews() {

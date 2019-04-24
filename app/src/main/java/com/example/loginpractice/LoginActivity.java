@@ -51,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(Utility.CheckLogin(account, getMD5String(password))) {
                     CheckRemember(account, password);
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    intent.putExtra("account", account);
                     startActivity(intent);
                     finish();
                 } else {
