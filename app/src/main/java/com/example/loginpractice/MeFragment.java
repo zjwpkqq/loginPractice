@@ -1,5 +1,6 @@
 package com.example.loginpractice;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,7 +21,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MeFragment extends Fragment {
 
-    TextView userName;
+    private TextView userName;
     private String nickname;
 
     @Nullable
@@ -28,23 +29,26 @@ public class MeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_me, container, false);
         userName = view.findViewById(R.id.username);
-        final Bundle bundle = getArguments();
+        Bundle bundle = getArguments();
         if (nickname == null)
             nickname = bundle != null ? bundle.getString("nickname") : null;
         userName.setText(nickname);
         final String account = bundle != null ? bundle.getString("account") : null;
 
+        // 修改昵称
         RelativeLayout changeName = view.findViewById(R.id.change_name);
         changeName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeNickname(nickname, account);
+                changeNickname(account);
             }
         });
 
+        // 设置头像
         CircleImageView portraitImage = view.findViewById(R.id.portrait_image);
         portraitImage.setImageResource(bundle != null ? bundle.getInt("portrait") : 0);
 
+        // 退出登录
         TextView logout = view.findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,24 +60,23 @@ public class MeFragment extends Fragment {
         return view;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-        userName.setText(nickname);
-    }
-
-    public void changeNickname(String nickname, final String account) {
-        final EditText editText = new EditText(getActivity());
+    public void changeNickname(final String account) {
+        @SuppressLint("InflateParams") View view = LayoutInflater.from(getActivity()).inflate(R.layout.change_nickname, null);
         AlertDialog.Builder inputDialog = new AlertDialog.Builder(getActivity());
-        inputDialog.setTitle("修改昵称").setView(editText);
+
+        final EditText editText = view.findViewById(R.id.edit_name);
         editText.setText(nickname);
         editText.setSelection(nickname.length());
+
+        inputDialog.setTitle("修改名称").setView(view);
         inputDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 User user = new User();
                 user.setNickname(editText.getText().toString());
                 user.updateAll("account = ?", account);
-                setNickname(editText.getText().toString());
+                nickname = editText.getText().toString();
+                userName.setText(nickname);
             }
         }).show();
     }
