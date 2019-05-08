@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,15 +20,27 @@ import java.util.Objects;
 
 public class ContactsFragment extends Fragment {
     private List<Hero> heroList = new ArrayList<>();
+    private SwipeRefreshLayout swipeRefreshLayout;
+    private HeroAdapter adapter;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_contacts, container, false);
+
+        swipeRefreshLayout = view.findViewById(R.id.swipe_refresh);
+        swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshHeroes();
+            }
+        });
+
         if (heroList.size() == 0){
             initHeroes();
         }
-        HeroAdapter adapter = new HeroAdapter(getActivity(), R.layout.hero_item, heroList);
+        adapter = new HeroAdapter(getActivity(), R.layout.hero_item, heroList);
         ListView listView = view.findViewById(R.id.list_view);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -45,6 +58,28 @@ public class ContactsFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    // 下拉刷新
+    private void refreshHeroes() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        initHeroes();
+                        adapter.notifyDataSetChanged();
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                });
+            }
+        }).start();
     }
 
     private void initHeroes() {

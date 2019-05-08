@@ -3,6 +3,7 @@
     <color name="colorPrimary">#1D285A</color>
     <color name="colorPrimaryDark">#010411</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary2">#394899</color>
 
     <!-- TabLayout -->
     <color name="white">#FFFFFF</color>

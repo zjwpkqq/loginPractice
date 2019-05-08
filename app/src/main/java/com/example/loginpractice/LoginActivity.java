@@ -38,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
             String account = pref.getString("account", "");
             String password = pref.getString("password", "");
             accountEdit.setText(account);
+            accountEdit.setSelection(account.length());
             passwordEdit.setText(password);
             rememberPass.setChecked(true);
         }
