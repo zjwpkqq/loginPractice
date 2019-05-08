@@ -42,7 +42,7 @@
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" >
 
-            <ListView
+            <com.example.loginpractice.ExListView
                 android:id="@+id/list_view"
                 android:divider="@android:color/transparent"
                 android:layout_width="match_parent"
